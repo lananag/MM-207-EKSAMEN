@@ -54,7 +54,7 @@ router.post("/login", async function(req, res, next) {
         if (authUtils.verifyPassword(inputPassword, dbHash, dbSalt)){ // if input hash matches db hash, create token and send it to user.
 
             if (admin == true){
-                let token = authUtils.createToken(dbUsername, dbUserId, admin);
+                let token = authUtils.createToken(dbUsername, dbUserId);
                 res.status(200).json({
                     token: token,
                     message: "Admin logged in."
