@@ -1,0 +1,47 @@
+{
+    "h1WelcomeText": "LISTE DE TÂCHES LANAPP",
+    "pWelcomeText": "Inscrivez-vous ou connectez-vous pour commencer.",
+
+    "buttonregistertext": "S'inscrire",
+    "buttonlogintext": "Se connecter",
+
+    "pregistertext": "Inscrivez-vous ci-dessous.",
+
+    "registerusernameplaceholder": "Nom d'utilisateur...",
+    "registerpasswordplaceholder": "Mot de passe...",
+    "registerpassword2placeholder": "Confirmez le mot de passe...",
+
+    "passwordsdontmatch": "Mots de passe ne correspondent pas",
+    "usernametooshort": "Nom d'utilisateur court",
+    "passwordtooshort": "Mot de passe court",
+    "usernameerrorcolon": "Nom d'utilisateur invalide",
+
+    "registered": "Inscription réussie.",
+    "plogintext": "Connectez-vous ci-dessous.",
+    "loggedin": "Connecté...",
+
+    "h1TodoText": "VOS TÂCHES",
+    "pTodoText": "Ajoutez une nouvelle tâche ou parcourez les tâches actuelles.",
+
+    "todoplaceholder": "Tâche...",
+    "buttonaddtext": "Ajouter",
+
+    "added": "Tâche ajoutée",
+
+    "buttondeletetext": "Supprimer",
+    "buttonupdatetext": "Mettre à jour",
+
+    "deleted": "Tâche supprimée",
+    "updated": "Tâche mise à jour",
+
+    "buttonlogouttext": "Déconnexion",
+
+    "h1AdminText": "ADMINISTRATION",
+    "pAdminText": "Parcourez les utilisateurs.",
+
+    "buttondeleteusertext": "Supprimer utilisateur",
+
+    "deletedMember": "Utilisateur supprimé",
+
+    "nousersfound": "Aucun utilisateur trouvé"
+}

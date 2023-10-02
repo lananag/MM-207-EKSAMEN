@@ -1,0 +1,50 @@
+{
+
+    "h1WelcomeText":"LANAPPs TO-DO LIST",
+    "pWelcomeText":"Register or sign in to start using the app.",
+
+    "buttonregistertext":"register",
+    "buttonlogintext":"login",
+
+    "pregistertext":"Register by filling out the form below.",    
+    
+    "registerusernameplaceholder":"Write username...",
+    "registerpasswordplaceholder":"Write password...",
+    "registerpassword2placeholder":"Confirm password...",
+
+    "passwordsdontmatch":"Passwords don't match",
+    "usernametooshort":"Username too short",
+    "passwordtooshort":"Password too short",
+    "usernameerrorcolon":"Username cant contain :",
+
+    "registered":"Registered. You can now log in.",
+    "plogintext":"Log in by filling out the form below.",
+    "loggedin":"Logged in..",
+
+    "h1TodoText":"YOUR TO-DO LIST",
+    "pTodoText":"Add a new task by filling out the form below or browse current tasks.",
+
+    "todoplaceholder":"Write task...",
+    "buttonaddtext":"add",
+
+    "added":"Added list item",
+
+    "buttondeletetext":"delete",
+    "buttonupdatetext":"update",
+
+    "deleted":"Deleted list item",
+    "updated":"Updated list item",
+
+    "buttonlogouttext":"logout",
+
+    "h1AdminText":"ADMIN",
+    "pAdminText":"Browse users.",
+
+    "buttondeleteusertext":"delete user",
+
+    "deletedMember":"Deleted user.",
+
+    "nousersfound":"No users found."
+
+ 
+    }
