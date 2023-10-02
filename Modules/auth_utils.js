@@ -1,6 +1,6 @@
 const crypto = require("crypto");
 require("dotenv").config();
-const secret = process.env.SECRET
+const secret = process.env.SECRET;
 let utils = {};
 
 utils.decodeCred = function (credString) {
