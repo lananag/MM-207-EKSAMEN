@@ -628,8 +628,9 @@
 
                 let button = document.createElement('button');
                 button.innerHTML = language.buttondeleteusertext;
-                button.addEventListener('click', function () {
-                    deleteMember(memberId);
+                button.addEventListener('click', async function () {
+                   await deleteMember(memberId);
+                   loadAdminPage();
                 });
 
                 div.appendChild(button);
@@ -669,7 +670,7 @@
             }
 
             pmessage.innerHTML = language.deletedMember;
-                loadAdminPage();
+           
 
 
 
