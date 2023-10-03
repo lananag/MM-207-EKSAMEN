@@ -5,7 +5,7 @@ const pool = new pg.Pool({connectionString: connstring, ssl: {rejectUnauthorized
 
 let dbMethods = {};
 
-// Users ----------------------------------------------------------------------
+// Users
 
 dbMethods.getUser = function(username) {
     let sql = "SELECT * FROM users WHERE username = $1"; //get user info from databse by username.
@@ -20,7 +20,7 @@ dbMethods.createUser = function(username, password, salt) {
 };
 
 
-// List -------------------------------------------------------------------
+// List
 
 dbMethods.createItem = function(userid, text, dueDate) {
     let sql = "INSERT INTO listitems (userid, text, duedate) VALUES ($1, $2, $3) RETURNING *"; //create new item in database with the follow
@@ -48,7 +48,7 @@ dbMethods.deleteItem = function(userid, id) {
 };
 
 
-// Admin ----------------------------------------------------------------------
+// Admin
 
 
 //get all users except admins.

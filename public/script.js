@@ -8,7 +8,7 @@
             language = await getLanguage(Language); // Update the global variable
             loadWelcomePage();
         });
-        // Define an async function getLanguage that fetches language data from the server
+        // Define async function getLanguage that fetches language data from  server
         async function getLanguage(Language) {
             try{
                 //store chosen langauge in variable
@@ -138,7 +138,7 @@
 
                     let credString = createCredentialString(username, password);
 
-
+                    
                     let cfg = {
                         method: "POST",
                         headers: {
@@ -164,7 +164,7 @@
                 p.innerHTML = error;
             }
         });
-        // appending register button to subcontainer
+        // appending register button
         subContainer.appendChild(button);
     }
 
@@ -181,7 +181,7 @@
         let p = document.createElement('p');
         p.innerHTML = language.plogintext;
         subContainer.appendChild(p);
-      
+        // input field for username
         let input = document.createElement('input');
         input.setAttribute('type', 'text');
         input.setAttribute('id', 'username');
@@ -189,7 +189,7 @@
         input.setAttribute('placeholder', language.registerusernameplaceholder);
         subContainer.appendChild(input);
         subContainer.appendChild(br);
-    
+        //Input field for password
         let input2 = document.createElement('input');
         input2.setAttribute('type', 'password');
         input2.setAttribute('id', 'password');
@@ -291,18 +291,18 @@
         let h1 = document.createElement('h1');
         h1.innerHTML = language.h1TodoText;
         div.appendChild(h1);
-
+        
         let p = document.createElement('p');
         p.innerHTML = language.pTodoText;
         div.appendChild(p);
-
+        //textarea
         let textarea = document.createElement('textarea');
         textarea.setAttribute('id', 'todo');
         textarea.setAttribute('name', 'todo');
         textarea.setAttribute('placeholder', language.todoplaceholder);
         div.appendChild(textarea);
 
-
+        //due date 
         let duedate = document.createElement('input');
         duedate.setAttribute('type', 'date');
         duedate.setAttribute('id', 'duedate');
@@ -311,7 +311,7 @@
 
         let button = document.createElement('button');
         button.innerHTML = language.buttonaddtext;
-
+        // get and post by button
         button.addEventListener('click', function () {
             let text = document.getElementById('todo').value;
             let duedate = document.getElementById('duedate');
@@ -331,15 +331,15 @@
         let p = document.getElementById('message');
 
 
-
+        
         try{
             let url = "/todo";
             //http method, header, request body
             let cfg = {
                 method: "POST",
                 headers: {
-                    "content-Type": "application/json",
-                    "authorization": localStorage.getItem("token")
+                    "content-Type": "application/json", //json format
+                    "authorization": localStorage.getItem("token")  //adding authtoken from localstorage
                 },
                 body: JSON.stringify({
                     "item": text,
@@ -454,7 +454,7 @@
 
         try{
             let url = "/todo/" + itemId;
-
+          
             let cfg = {
                 method: "DELETE",
                 headers: {
@@ -487,7 +487,7 @@
         let pmessage = document.getElementById('message');
         // getting item id
         let div = document.getElementById(itemId);
-       
+        //display input for the text area for updated
         let input = document.createElement('textarea');
         input.setAttribute('type', 'text');
         input.setAttribute('id', 'editTodo');
@@ -529,7 +529,7 @@
 
         
             let url = "/todo/" + itemId;
-
+         
             let cfg = {
                 method: "PUT",
                 headers: {
@@ -570,7 +570,7 @@
         let h1 = document.createElement('h1');
         h1.innerHTML = language.h1AdminText;
         subContainer.appendChild(h1);
-
+        
         let p = document.createElement('p');
         p.innerHTML = language.pAdminText;
         subContainer.appendChild(p);
@@ -578,7 +578,7 @@
         try{
             //preparing config req
             let url = "/admin";
-
+          
             let cfg = {
                 method: "GET",
                 headers: {
@@ -599,7 +599,7 @@
              data.forEach(async function (member) {
 
                 let memberId = member.id;
-            
+                // display list of members 
                 let div = document.createElement('div');
                 div.id = memberId;
                 div.className = "memberList";
@@ -607,7 +607,7 @@
                 let p = document.createElement('p');
                 p.innerHTML = member.username;
                 div.appendChild(p);
-
+                // button to delete each registered user 
                 let button = document.createElement('button');
                 button.innerHTML = language.buttondeleteusertext;
                 button.addEventListener('click', async function () {
@@ -634,7 +634,7 @@
 
         try{
             let url = "/admin/" + memberId;
-
+         
             let cfg = {
                 method: "DELETE",
                 headers: {
