@@ -11,7 +11,7 @@ const admin = require ("./Modules/admin.js");
 
 
 server.use(express.static("public"));
-server.use(express.json());
+server.use(express.json()); 
 server.use(todolists);
 server.use(language);
 server.use(users);
