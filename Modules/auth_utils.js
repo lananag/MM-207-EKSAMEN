@@ -7,13 +7,13 @@ utils.decodeCred = function (credString) {
 
     let cred = {}; //create object to hold username and password.
 
-    let b64String = credString.replace("basic ", ""); //remove "basic " from inputstring
+    let b64String = credString.replace("basic ", ""); //remove "basic " from string
 
-    let String = Buffer.from(b64String, "base64").toString(""); //decoding b64 encoded string, clear text.
+    let asciiString = Buffer.from(b64String, "base64").toString("ascii"); //convert to ascii, clear text.
 
-    cred.username = String.replace(/:.*/, ""); //extract username, using regular expression
+    cred.username = asciiString.replace(/:.*/, ""); //extract username, using regex
 
-    cred.password = String.replace(cred.username + ":", ""); //extract password.
+    cred.password = asciiString.replace(cred.username + ":", ""); //extract password.
 
     return cred; //return object with username and password.
 
@@ -61,7 +61,7 @@ utils.verifyToken = function (token) {
         return false; //token is invalid
     }
 
-    let payloadText = Buffer.from(tokenArr[1], "base64").toString(""); //get payload as text
+    let payloadText = Buffer.from(tokenArr[1], "base64").toString("ascii"); //get payload as text
     let payload = JSON.parse(payloadText); //get payload as object
 
     let expireTime = payload.iat + 1000 * 60 * 60; //expire time is 1 hour

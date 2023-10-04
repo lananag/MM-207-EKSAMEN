@@ -1,70 +1,70 @@
+        /* global style for the whole page*/
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        /*width and centered container*/
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        /* style to form element*/
+        select, input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
 
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        color: #333;
-        margin: 0;
-        padding: 0;
-    }
 
-    .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+        }
 
-    select, input, textarea, button {
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        box-sizing: border-box;
-    }
-
-
-    button {
-        background-color: #007BFF;
-        color: #fff;
-        cursor: pointer;
-    }
-
-    button:hover {
-        background-color: #0056b3;
-    }
-
-    h1 {
-        border-bottom: 2px solid #007BFF;
-        padding-bottom: 10px;
-        margin-bottom: 20px;
-    }
-
-    p {
-        margin-bottom: 20px;
-    }
-
-    .item {
-        background-color: #eee;
-        padding: 10px;
-        margin: 10px 0;
-        border-radius: 5px;
-    }
-
-    .item p {
-        display: inline-block;
-        margin-right: 20px;
-    }
-
-    .memberList {
-        background-color: #ddd;
-        padding: 10px;
-        margin: 10px 0;
-        border-radius: 5px;
-    }
-
-    .memberList p {
-        display: inline-block;
-        margin-right: 20px;
-    }
+        button:hover {
+            background-color: #0056b3;
+        }
+        /*heading*/
+        h1 {
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        /*margin for paragraph*/
+        p {
+            margin-bottom: 20px;
+        }
+        /*item or element*/
+        .item {
+            background-color: #eee;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        /*items list paragraph*/
+        .item p {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        /*members and items*/
+        .memberList {
+            background-color: #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        /*members list paragraph*/
+        .memberList p {
+            display: inline-block;
+            margin-right: 20px;
+        }
