@@ -9,7 +9,7 @@ utils.decodeCred = function (credString) {
 
     let b64String = credString.replace("basic ", ""); //remove "basic " from inputstring
 
-    let string = Buffer.from(b64String, "base64").toString(""); //decoding b64 encoded string, clear text.
+    let String = Buffer.from(b64String, "base64").toString(""); //decoding b64 encoded string, clear text.
 
     cred.username = String.replace(/:.*/, ""); //extract username, using regular expression
 
