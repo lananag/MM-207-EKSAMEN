@@ -45,6 +45,7 @@ router.post("/login", async function(req, res, next) {
         let dbHash = data.rows[0].password;
         let dbSalt = data.rows[0].salt;
         let inputPassword = cred.password;
+        // getting admin value from the user's admin field
         let admin = data.rows[0].isadmin;
 
         if (data.rows.length == 0){
@@ -52,14 +53,15 @@ router.post("/login", async function(req, res, next) {
         }
 
         if (authUtils.verifyPassword(inputPassword, dbHash, dbSalt)){ // if input hash matches db hash, create token and send it to user.
-
+            // checkign if the boolean value from the admin field is false or true
             if (admin == true){
+                // sending message to client if user logging in is admin or non-admin, with token 
                 let token = authUtils.createToken(dbUsername, dbUserId);
                 res.status(200).json({
                     token: token,
                     message: "Admin logged in."
                 }).end();
-            } else {
+            } else { 
                 let token = authUtils.createToken(dbUsername, dbUserId);
                 res.status(200).json({
                     token: token,

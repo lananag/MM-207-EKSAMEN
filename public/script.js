@@ -71,15 +71,15 @@
             subContainer.innerHTML = ""; // Clear previous content
 
             let br = document.createElement('br');
-            // create+display and display header 
+            // create h1 and display text from language file
             let h1 = document.createElement('h1');
             h1.innerHTML = language.h1WelcomeText;
             subContainer.appendChild(h1);
-            // create+display paragraph for registration
+            // create and display paragraph for registration
             let p = document.createElement('p');
             p.innerHTML = language.pregistertext;
             subContainer.appendChild(p);
-            // create+display an input field for the username
+            // create and display input field for username 
             let input = document.createElement('input');
             input.setAttribute('type', 'text');
             input.setAttribute('id', 'username');
@@ -87,7 +87,7 @@
             input.setAttribute('placeholder', language.registerusernameplaceholder);
             subContainer.appendChild(input);
             subContainer.appendChild(br);
-            // create+display an input field for password
+            // create and display input field for password
             let input2 = document.createElement('input');
             input2.setAttribute('type', 'password');
             input2.setAttribute('id', 'password');
@@ -95,7 +95,7 @@
             input2.setAttribute('placeholder', language.registerpasswordplaceholder);
             subContainer.appendChild(input2);
             subContainer.appendChild(br);
-            // create+display an input for confirming password
+            // create and display input field for confirming password
             let input3 = document.createElement('input');
             input3.setAttribute('type', 'password');
             input3.setAttribute('id', 'password2');
@@ -104,7 +104,7 @@
             subContainer.appendChild(input3);
             subContainer.appendChild(br);
             
-            // creating+display button for register
+            // create and display a button for registration
             let button = document.createElement('button');
             button.innerHTML = language.buttonregistertext;
             // creating click addeventlistener for register button
@@ -311,7 +311,7 @@
 
         let button = document.createElement('button');
         button.innerHTML = language.buttonaddtext;
-        // get and post by button
+        // adding eventlistener, click bringing text and date from input and sends to function postItem
         button.addEventListener('click', function () {
             let text = document.getElementById('todo').value;
             let duedate = document.getElementById('duedate');
@@ -346,7 +346,7 @@
                     "duedate": duedate
                 })
             };
-            //post request to send todo item to server
+            //post request to server with info from input
             let response = await fetch(url, cfg);
             let data = await response.json();
 
@@ -462,7 +462,7 @@
                     "authorization": localStorage.getItem("token")
                 }
             };
-
+            // sending delete request to server, with the id of the item that the user wants to delete
             let response = await fetch(url, cfg);
             let data = await response.json();
 
@@ -517,7 +517,7 @@
 
     }
 
-
+    // function bringing input value from item id, changes then sending updated info to server
     async function postUpdate(itemId) {
 
         let pmessage = document.getElementById('message');
@@ -544,7 +544,7 @@
 
             let response = await fetch(url, cfg);
             let data = await response.json();
-
+            // if changes occur, sending to db
             if (response.status != 200) { //if error
             throw data.error;
             pmessage.innerHTML = data.error;
@@ -554,7 +554,7 @@
             setTimeout(function () {
                 loadTodoPage();
             }, 1000);
-
+            // if error occured, error message will show
         } catch (error) {
 
             pmessage.innerHTML = error;
@@ -627,7 +627,7 @@
         }
     }
 
-    // deleting member by memberId
+    // sending delete request to the server with id of the user you want to delete 
     async function deleteMember(memberId) {
 
         let pmessage = document.getElementById('message');
@@ -645,8 +645,8 @@
 
             let response = await fetch(url, cfg);
             let data = await response.json();
-
-            if (response.status != 200) { //if error
+            // if delete isn't succeeded, error message will show
+            if (response.status != 200) { 
             throw data.error;
             
             }
