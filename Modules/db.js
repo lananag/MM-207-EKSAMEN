@@ -65,8 +65,8 @@ dbMethods.checkAdmin = function(userid) {
     return pool.query(sql, values);
 };
 
-dbMethods.deleteUser = function(userid, id) {
-    this.checkAdmin(userid).then(function(data) {
+dbMethods.deleteUser = function (userid, id) {
+    return this.checkAdmin(userid).then(function (data) {
         if (data.rows[0].isadmin == true) {
             let sql = "DELETE FROM users WHERE id = $1 RETURNING *"; //delete user from database by id.
             let values = [id];
@@ -74,13 +74,6 @@ dbMethods.deleteUser = function(userid, id) {
         }
     });
 };
-
-
-
-
-
-
-
 
 
 

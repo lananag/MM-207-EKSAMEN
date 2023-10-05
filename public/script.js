@@ -391,7 +391,6 @@
 
             if (response.status != 200) { //if error
                 throw data.error;
-                pmessage.innerHTML = data.error;
                 
             }    
             // making div for to-do items
@@ -478,7 +477,7 @@
 
         } catch (error) {
 
-            pmessage.innerHTML = data.error;
+            pmessage.innerHTML = error;
         }
     }
 
@@ -547,7 +546,6 @@
             // if changes occur, sending to db
             if (response.status != 200) { //if error
             throw data.error;
-            pmessage.innerHTML = data.error;
             }
 
             pmessage.innerHTML = language.updated;
@@ -575,6 +573,10 @@
         p.innerHTML = language.pAdminText;
         subContainer.appendChild(p);
 
+        let pmessage = document.createElement('p');
+        pmessage.id = "message";
+        subContainer.appendChild(pmessage);
+
         try{
             //preparing config req
             let url = "/admin";
@@ -596,7 +598,7 @@
             throw data.error;
             }
                 //going throught users and users data 
-             data.forEach(async function (member) {
+             data.forEach(function (member) {
 
                 let memberId = member.id;
                 // display list of members 
@@ -610,9 +612,8 @@
                 // button to delete each registered user 
                 let button = document.createElement('button');
                 button.innerHTML = language.buttondeleteusertext;
-                button.addEventListener('click', async function () {
-                   await deleteMember(memberId);
-                   loadAdminPage();
+                button.addEventListener('click', function () {
+                   deleteMember(memberId);
                 });
 
                 div.appendChild(button);
@@ -645,20 +646,19 @@
 
             let response = await fetch(url, cfg);
             let data = await response.json();
+
+
             // if delete isn't succeeded, error message will show
             if (response.status != 200) { 
-            throw data.error;
-            
+                throw data.error;            
             }
 
             pmessage.innerHTML = language.deletedMember;
-           
-
-
-
+            setTimeout(function () {
+                loadAdminPage();
+            }, 1000);
 
         } catch (error) {
-   
-            pmessage.innerHTML = data.error;
+            pmessage.innerHTML = error;
         }
     }
